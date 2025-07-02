@@ -1,0 +1,61 @@
+div.grid{
+  margin-top: 100px !important;
+  margin-left:40px !important;
+}
+
+.example-form {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+}
+
+.example-full-width {
+  width: 100%;
+}
+
+.table td {
+  background-color: #f7f4ee;
+  border-bottom: 1px solid #ff5c5c;
+}
+
+.table td {
+  background-color: #fff ;
+  border-bottom: 1px solid #ff5c5c;
+}
+
+.table thead th {
+  vertical-align: bottom;
+  border-bottom: 2px solid #ff5c5c;
+}
+
+
+
+
+
+
+
+
+.delete-button {
+font-size: 24px;
+color: #9bd4de; /* Button color */
+cursor: pointer;
+border: none;
+background: none;
+transition: color 0.3s; /* Add transition for a smooth color change */
+}
+
+.delete-button:hover {
+color: rgb(219, 46, 46); /* Change the color on hover */
+}
+
+
+
+p.grid-header{
+border-left:1px solid #ff5c5c ;
+}
+
+
+
+.Font-size-table{
+  font-size: 15px;
+}

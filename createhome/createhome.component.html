@@ -1,0 +1,36 @@
+<h2 mat-dialog-title style="color:  #ff5c5c;">Create Home Content </h2>
+<mat-dialog-content class="mat-typography">
+    <form class="example-form" [formGroup]="createhome">
+
+
+        <mat-form-field class="example-full-width">
+            <mat-label>Title</mat-label>
+            <input type="text" matInput formControlName="title">
+            <mat-error *ngIf="createhome.controls['title'].hasError('required')">
+                Title <strong>required</strong>
+            </mat-error>
+        </mat-form-field>
+
+
+        <mat-form-field class="example-full-width">
+            <mat-label>Contents</mat-label>
+            <input type="text" matInput formControlName="contents">
+            <mat-error *ngIf="createhome.controls['contents'].hasError('required')">
+                Contents is <strong>required</strong>
+            </mat-error>
+        </mat-form-field>
+
+
+
+        <div>
+            <input type="file" #filee formControlName="imagename" (change)="uploadImageHome(filee.files)">
+        </div>
+    </form>
+
+
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+    <button mat-button mat-dialog-close class="btn btn-danger m-1">Cancel</button>
+    <button mat-button [mat-dialog-close]="true" (click)="save() " cdkFocusInitial
+        class="btn btn-success m-1">Save</button>
+</mat-dialog-actions>

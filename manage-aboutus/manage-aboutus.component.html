@@ -1,0 +1,99 @@
+<div class="page-body">
+  <app-sidbardash></app-sidbardash>
+  <div class="col-lg-11 mt-4 ms-4">
+    <div class="grid">
+      <p class="grid-header" style="font-size: 17px;">Manage About Page</p>
+      <button type="button" class="btn btn-outline-success m-4" (click)="createabout()">Create Content</button>
+      <div class="item-wrapper">
+        <div class="table-responsive">
+          <table class="table">
+            <thead>
+              <tr>
+                <th style="font-size: 14px;">Title</th>
+                <th style="font-size: 14px;">Contents</th>
+                <th style="font-size: 14px;">Video</th>
+                <th style="font-size: 14px;">Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let c of home.About">
+                <td class="Font-size-table">{{c.title}}</td>
+                <td class="Font-size-table">{{c.contents}}</td>
+                <td>
+                  <video class="m-2 p-2 video-style" controls onerror="videoError()">
+                    <source src="../../../assets/AboutVido/{{c.imagename}} " type="video/mp4">
+                  </video>
+                </td>
+                <td>
+                  <button class="update1-button" (click)="openUpdateADailog(c)">
+                    <i class="fas fa-pen"></i>
+                  </button>
+
+                  <button class="delete-button" (click)="DeleteAbout(c.id)">
+                    <i class="fas fa-trash"></i>
+                  </button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<!-- template to delete about content -->
+
+<ng-template #calingdeleteAboutdialog>
+  <h1 mat-dialog-title style="color:  #ff5c5c;">Delte About Content</h1>
+  <div mat-dialog-content style="font-size: 20px;">Are you shure to delete this item?</div>
+  <div mat-dialog-actions>
+    <button mat-button class="btn btn-success m-1" mat-dialog-close="yes">Yes</button>
+    <button mat-button mat-dialog-close="no" class="btn btn-danger m-1">No</button>
+  </div>
+
+</ng-template>
+
+
+
+
+<!-- template to update about content -->
+<ng-template #calingupdateAboutdialog>
+  <h2 mat-dialog-title style="color:  #ff5c5c;">Update Home Content </h2>
+  <mat-dialog-content class="mat-typography">
+    <form class="example-form" [formGroup]="updateAbout">
+      <mat-form-field class="example-full-width">
+        <mat-label>Title</mat-label>
+        <input type="text" matInput formControlName="title" [(ngModel)]="pAData.title">
+        <mat-error *ngIf="updateAbout.controls['title'].hasError('required')">
+          <title></title> Title is <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Contents</mat-label>
+        <input type="text" matInput formControlName="contents" [(ngModel)]="pAData.contents">
+        <mat-error *ngIf="updateAbout.controls['contents'].hasError('required')">
+          <title></title> Contents is <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+
+
+
+      <div>
+        <input type="file" #file formControlName="imagename" (change)="uploadVideoAbout(file.files)"
+          [(ngModel)]="pAData.imagename">
+      </div>
+
+    </form>
+  </mat-dialog-content>
+  <mat-dialog-actions align="end">
+    <button mat-button mat-dialog-close class="btn btn-danger m-1">Cancel</button>
+    <button class="btn btn-success m-1" mat-button [mat-dialog-close]="true" cdkFocusInitial
+      (click)="updateabout()">update</button>
+  </mat-dialog-actions>
+
+
+</ng-template>

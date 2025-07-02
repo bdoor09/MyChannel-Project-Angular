@@ -1,0 +1,107 @@
+<div class="page-body">
+  <!-- partial:../../partials/_sidebar.html -->
+  <app-sidbardash></app-sidbardash>
+  <!-- partial -->
+
+
+  <div class="col-lg-11 mt-4 ms-4">
+    <div class="grid">
+      <p class="grid-header" style="font-size: 17px;">Manage Home Page</p>
+      <button type="button" class="btn btn-outline-success m-4" (click)="createhome()">Create Content</button>
+      <div class="item-wrapper">
+        <div class="table-responsive">
+          <table class="table" id="content" #content>
+            <thead>
+              <tr>
+                <th style="font-size: 14px;">Title</th>
+                <th style="font-size: 14px;">Contents</th>
+                <th style="font-size: 14px;">Image</th>
+                <th style="font-size: 14px;">Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let c of home.Home">
+                <td class="Font-size-table">{{c.title}}</td>
+                <td class="Font-size-table">{{c.contents}}</td>
+                <td class="Font-size-table"><img src="../../../assets/HomeImages/{{c.imagename}}" class="image-style">
+                </td>
+                <td>
+
+
+                  <button class="update1-button" (click)="openUpdateHomeDailog(c)">
+                    <i class="fas fa-pen"></i>
+                  </button>
+
+
+                  <button class="delete-button" (click)="DeleteHomec(c.id)">
+                    <i class="fas fa-trash"></i>
+                  </button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+<ng-template #calingdeleteHomedialog>
+  <h1 mat-dialog-title style="color:  #ff5c5c;">Delte Home Content</h1>
+  <div mat-dialog-content style="font-size: 20px;">Are you shure to delete this item?</div>
+  <div mat-dialog-actions>
+    <button mat-button class="btn btn-success m-1" mat-dialog-close="yes">Yes</button>
+    <button mat-button mat-dialog-close="no" class="btn btn-danger m-1">No</button>
+  </div>
+
+</ng-template>
+
+
+
+
+
+
+<ng-template #callUpdateHomeDialog>
+  <h2 mat-dialog-title style="color:  #ff5c5c;">Update Home Content </h2>
+  <mat-dialog-content class="mat-typography">
+    <form class="example-form" [formGroup]="updateHome">
+      <mat-form-field class="example-full-width">
+
+        
+        <mat-label>Title</mat-label>
+        <input type="text" matInput formControlName="title" [(ngModel)]="pHomeData.title">
+        <mat-error *ngIf="updateHome.controls['title'].hasError('required')">
+          <title></title> Title is <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Contents</mat-label>
+        <input type="text" matInput formControlName="contents" [(ngModel)]="pHomeData.contents">
+        <mat-error *ngIf="updateHome.controls['contents'].hasError('required')">
+          <title></title> Contents is <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+
+
+
+
+      <div>
+        <input type="file" #file formControlName="imagename" (change)="uploadImageHome(file.files)">
+      </div>
+
+
+    </form>
+  </mat-dialog-content>
+  <mat-dialog-actions align="end">
+    <button mat-button mat-dialog-close class="btn btn-danger m-1">Cancel</button>
+    <button class="btn btn-success m-1" mat-button [mat-dialog-close]="true" cdkFocusInitial
+      (click)="updatehome()">update</button>
+  </mat-dialog-actions>
+
+
+</ng-template>

@@ -1,0 +1,59 @@
+<div class="page-body">
+
+  <app-sidbardash></app-sidbardash>
+
+  <div class="col-lg-12 mt-4 ms-4">
+    <div class="grid">
+      <p class="grid-header" style="font-size: 17px;">Manage Feedback Page</p>
+
+      <div class="item-wrapper">
+        <div class="table-responsive">
+          <table class="table mt-4">
+            <thead>
+              <tr>
+                <th style="font-size: 14px;">Content</th>
+                <th style="font-size: 14px;">UserId</th>
+                <th style="font-size: 14px;">Firaname</th>
+                <th style="font-size: 14px;">Lastname</th>
+                <th style="font-size: 14px;">Image</th>
+                <th style="font-size: 14px;">Action</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr *ngFor="let feed of home.FeedbackA">
+                <td class="Font-size-table">{{feed.content}}</td>
+                <td class="Font-size-table">{{feed.userId}}</td>
+                <td class="Font-size-table">{{feed.firstname}}</td>
+                <td class="Font-size-table">{{feed.lastname}}</td>
+                <td>
+                  <img class="profile-img img-sm" src="../../../assets/userImage/{{feed.image}}" alt="profile image">
+                </td>
+                <td>
+                  <button class="delete-button" (click)="DeleteFeedback(feed.id)">
+                    <i class="fas fa-trash"></i>
+                  </button>
+                </td>
+              </tr>
+            </tbody>
+
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+<ng-template #calingdeleteFeedbacksialog>
+  <h1 mat-dialog-title style="color:  #ff5c5c;">Delte Feedback Content</h1>
+  <div mat-dialog-content style="font-size: 20px;">Are you shure to delete this item?</div>
+  <div mat-dialog-actions>
+    <button mat-button class="btn btn-success m-1" mat-dialog-close="yes">Yes</button>
+    <button mat-button mat-dialog-close="no" class="btn btn-danger m-1">No</button>
+  </div>
+
+</ng-template>

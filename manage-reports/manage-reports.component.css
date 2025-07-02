@@ -1,0 +1,80 @@
+
+
+.table:not(.table-dark) thead tr th, .table:not(.table-dark) tfoot tr th, table:not(.table-dark) thead tr th, table:not(.table-dark) tfoot tr th{
+    background:#f4f6f8 !important;
+  }
+  
+  
+  .Font-size-table{
+    font-size: 13px;
+  }
+  
+  
+  
+  .table td {
+    background-color: #f7f4ee;
+    border-bottom: 1px solid #ff5c5c;
+  }
+  
+  .table td {
+    background-color: #fff ;
+    border-bottom: 1px solid #ff5c5c;
+  }
+  
+  .table thead th {
+    vertical-align: bottom;
+    border-bottom: 2px solid #ff5c5c;
+  }
+  
+  
+  
+  
+  .delete-button {
+    font-size: 24px;
+    color: #9bd4de; /* Button color */
+    cursor: pointer;
+    border: none;
+    background: none;
+    transition: color 0.3s; /* Add transition for a smooth color change */
+    }
+    
+    .delete-button:hover {
+    color: rgb(219, 46, 46); /* Change the color on hover */
+    }
+  
+  
+  
+    .notification-button {
+        font-size: 24px;
+        color: #dcb654; /* Default color */
+        cursor: pointer;
+        border: none;
+        background: none;
+        transition: color 0.3s; /* Add transition for a smooth color change */
+      }
+    
+      .notification-button:hover {
+        color: #e74c3c; /* Change the color on hover */
+      }
+  
+  
+      .smaller-input{
+        border: 1px solid silver;
+      }
+  
+  
+      /* Style for the download button */
+  .download-button {
+  font-size: 24px;
+  color: #daa043; /* Button color for download */
+  cursor: pointer;
+  border: none;
+  background: none;
+  transition: color 0.3s; /* Add transition for a smooth color change */
+  }
+  
+  /* Style for the download button on hover */
+  .download-button:hover {
+  color: #ff5c5c; /* Change the color on hover for download */
+  }
+    

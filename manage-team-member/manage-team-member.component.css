@@ -1,0 +1,128 @@
+div.grid{
+    margin-top: 100px !important;
+    margin-left: 40px !important;
+}
+
+
+.example-form {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+  }
+  
+  .example-full-width {
+    width: 100%;
+  }
+
+
+
+  .table td {
+    background-color: #f7f4ee;
+    border-bottom: 1px solid #ff5c5c;
+  }
+  
+  .table td {
+    background-color: #fff ;
+    border-bottom: 1px solid #ff5c5c;
+  }
+  
+  .table thead th {
+    vertical-align: bottom;
+    border-bottom: 2px solid #ff5c5c;
+  }
+  
+  
+  
+  /* Style for the update button */
+  .update-button {
+  display: inline-block;
+  padding: 10px;
+  background-color: #28a745; /* Button background color for update */
+  color: #fff; /* Button text color */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out; /* Transition effect on hover */
+  }
+  
+  /* Style for the update button on hover */
+  .update-button:hover {
+  background-color: #218838; /* New background color on hover for update */
+  }
+  
+  /* Style for the pen icon */
+  .update-button svg {
+  margin-right: 5px; /* Add some space between the icon and text */
+  }
+  
+  
+  
+  
+  .delete-button {
+  font-size: 24px;
+  color: #9bd4de; /* Button color */
+  cursor: pointer;
+  border: none;
+  background: none;
+  transition: color 0.3s; /* Add transition for a smooth color change */
+  }
+  
+  .delete-button:hover {
+  color: rgb(219, 46, 46); /* Change the color on hover */
+  }
+  
+  
+  /* Style for the update button */
+  .update1-button {
+  font-size: 24px;
+  color: #dcb654; /* Default color */
+  cursor: pointer;
+  border: none;
+  background: none;
+  transition: color 0.3s; /* Add transition for a smooth color change */
+  }
+  
+  /* Style for the update button on hover */
+  .update1-button:hover {
+  color:rgb(133, 177, 133); /* Change the color on hover for update */
+  }
+  
+  
+  
+  
+  
+  /* Style for the download button */
+  .download-button {
+  font-size: 24px;
+  color: #007bff; /* Button color for download */
+  cursor: pointer;
+  border: none;
+  background: none;
+  transition: color 0.3s; /* Add transition for a smooth color change */
+  }
+  
+  /* Style for the download button on hover */
+  .download-button:hover {
+  color: #0056b3; /* Change the color on hover for download */
+  }
+  
+  
+  p.grid-header{
+  border-left:1px solid #ff5c5c ;
+  }
+
+
+  .table:not(.table-dark) thead tr th, .table:not(.table-dark) tfoot tr th, table:not(.table-dark) thead tr th, table:not(.table-dark) tfoot tr th{
+    background:#f4f6f8 !important;
+  }
+  
+  
+  .Font-size-table{
+    font-size: 13px;
+  }
+
+  .image-style{
+   width: 100px;
+    height: 100px; 
+    object-fit:contain;
+  }

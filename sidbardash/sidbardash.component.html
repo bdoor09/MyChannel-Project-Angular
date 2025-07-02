@@ -1,0 +1,91 @@
+<!-- partial -->
+<div>
+    <!-- partial:partials/_custom-sidebar.html -->
+    <div class="custom-sidebar">
+        <div class="user-profile">
+            <div class="display-avatar animated-avatar">
+                <img class="profile-img img-lg rounded-circle" src="../../../assets/userImage/{{userdetailes.image}}" alt="profile image">
+            </div>
+            <!-- {{userdetailes.firstname}} -->
+            <div class="info-wrapper link-wrapper">
+                <p class="user-name"> Welcome {{userinfo.username}} </p>
+            </div>
+        </div>
+        <ul class="navigation-menu"> 
+            <li>
+                <a routerLink="/admin/profile">
+                    <span class="link-title ms-2" style="font-size: 15px;">My Profile</span>
+                    <i class=" mdi mdi-account-card-details  link-icon"></i>
+                </a>
+            </li>
+
+            <li>
+                <a routerLink="/admin/dashboard">
+                    <span class="link-title" style="font-size: 15px;">Dashboard</span>
+                    <i class="mdi mdi-gauge link-icon"></i>
+                </a>
+            </li>
+
+            <li>
+                <a href="#sample-pages" data-toggle="collapse" aria-expanded="false">
+                    <span class="link-title" style="font-size: 15px;">Manage Pages</span>
+                    <i class="mdi mdi-flask link-icon"></i>
+                </a>
+                <ul class="collapse navigation-submenu" id="sample-pages">
+                    <li>
+                        <a routerLink="/admin/managehome">Home</a>
+                    </li>
+
+                    <li>
+                        <a routerLink="/admin/managefeatures" >Features</a>
+                    </li>
+
+                    <li>
+                        <a routerLink="/admin/manageabout"  >About us</a>
+                    </li>
+
+                    <li>
+                        <a routerLink="/admin/managefeedback"  >FeedBack</a>
+                    </li>
+
+                    <li>
+                        <a routerLink="/admin/manageteammembers" >Team Members</a>
+                    </li>
+                </ul>
+            </li>
+
+            <li>
+                <a routerLink="/admin/managecontact">
+                    <span class="link-title" style="font-size: 15px;">Message</span>
+                    <i class="mdi mdi-message-text-outline link-icon"></i>
+                </a>
+            </li>
+            <li>
+                <a routerLink="/admin/reports">
+                    <span class="link-title" style="font-size: 15px;">Report</span>
+                    <i class="mdi mdi-clipboard-outline link-icon"></i>
+                </a>
+            </li>
+            <li>
+                <a routerLink="/">
+                    <span >Home Pge</span>
+                    <i class="mdi mdi-flower-tulip-outline link-icon"></i>
+                </a>
+            </li>
+
+            <li>
+                <a  (click)="Logout()">
+                    <span >Logout</span>
+                    <i class="mdi mdi-logout-variant link-icon"></i>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <!-- partial -->
+</div>
+
+
+
+
+
+  

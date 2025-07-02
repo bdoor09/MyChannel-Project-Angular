@@ -1,0 +1,54 @@
+<div class="page-body">
+  <!-- partial:../../partials/_sidebar.html -->
+  <app-sidbardash></app-sidbardash>
+  <!-- partial -->
+  <div class="col-lg-11 mt-4 ms-4">
+    <div class="grid">
+      <p class="grid-header">Manage Contact Page</p>
+      <div class="item-wrapper">
+        <div class="table-responsive">
+          <table class="table m-2">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Subject</th>
+                <th>Content</th>
+                <th>Email</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let con of home.Contact">
+                <td class="Font-size-table">{{con.name}}</td>
+                <td class="Font-size-table">{{con.subject}}</td>
+                <td class="Font-size-table">{{con.content}}</td>
+                <td> <a href="mailto:{{con.email}}">{{con.email}}</a></td>
+              
+                <td>
+
+
+
+                  <button class="delete-button" (click)="DeleteContact(con.id)">
+                    <i class="fas fa-trash"></i>
+                  </button>
+
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<ng-template #calingdeleteContactdialog>
+  <h1 mat-dialog-title style="color:  #ff5c5c;">Delte Contact Content</h1>
+  <div mat-dialog-content style="font-size: 20px;">Are you shure to delete this item?</div>
+  <div mat-dialog-actions>
+    <button mat-button class="btn btn-success m-1" mat-dialog-close="yes">Yes</button>
+    <button mat-button mat-dialog-close="no" class="btn btn-danger m-1">No</button>
+  </div>
+
+</ng-template>

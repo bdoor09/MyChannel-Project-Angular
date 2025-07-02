@@ -1,0 +1,149 @@
+<div class="page-body">
+  <!-- partial:../../partials/_sidebar.html -->
+  <app-sidbardash></app-sidbardash>
+  <!-- partial -->
+  <div class="col-lg-11 mt-4 ms-4">
+    <div class="grid">
+      <p class="grid-header" style="font-size: 17px;">Manage Team Members Page</p>
+      <button type="button" class="btn btn-outline-success m-4" (click)="createteammembers()">Create Team
+        Members</button>
+      <div class="item-wrapper">
+        <div class="table-responsive">
+          <table class="table">
+            <thead>
+              <tr>
+                <th style="font-size: 14px;">Member Name</th>
+                <th style="font-size: 14px;">Role</th>
+                <th style="font-size: 14px;">Email</th>
+                <th style="font-size: 14px;">Phone Number</th>
+                <th style="font-size: 14px;">Linkedin</th>
+                <th style="font-size: 14px;">Image</th>
+                <th style="font-size: 14px;">Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let t of home.Team">
+                <td class="Font-size-table">{{t.membername}}</td>
+                <td class="Font-size-table">{{t.role}}</td>
+                <td class="Font-size-table">{{t.email}}</td>
+                <td class="Font-size-table">{{t.phonenumber}}</td>
+                <td class="Font-size-table">{{t.linkedin}}</td>
+                <!-- <td>{{t.imagename}}</td> -->
+                <td>
+                  <img src="../../../assets/TeamImage/{{t.imagename}}" class="image-style">
+                </td>
+                <td>
+
+
+                  <button class="update1-button" (click)="openUpdateTeamDailog(t)">
+                    <i class="fas fa-pen"></i>
+                  </button>
+
+
+                  <button class="delete-button" (click)="DeleteTeam(t.id)">
+                    <i class="fas fa-trash"></i>
+                  </button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+<ng-template #calingdeleteTeamialog>
+  <h1 mat-dialog-title style="color:  #ff5c5c;">Delete Team Members Content</h1>
+  <div mat-dialog-content style="font-size: 20px;">Are you shure to delete this Team Member?</div>
+  <div mat-dialog-actions>
+    <button mat-button class="btn btn-success m-1" mat-dialog-close="yes">Yes</button>
+    <button mat-button mat-dialog-close="no" class="btn btn-danger m-1">No</button>
+  </div>
+
+</ng-template>
+
+
+
+
+
+<ng-template #callUpdateTeamDialog>
+  <h2 mat-dialog-title style="color:  #ff5c5c;">Update Team Member Content </h2>
+  <mat-dialog-content class="mat-typography">
+    <form class="example-form" [formGroup]="updateTeam">
+      <mat-form-field class="example-full-width">
+        <mat-label>Member Name</mat-label>
+        <input type="text" matInput formControlName="membername" [(ngModel)]="pTeamData.membername">
+        <mat-error *ngIf="updateTeam.controls['membername'].hasError('required')">
+          <title></title> Member Name is <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Role</mat-label>
+        <input type="text" matInput formControlName="role" [(ngModel)]="pTeamData.role">
+        <mat-error *ngIf="updateTeam.controls['role'].hasError('required')">
+          <title></title> Role is <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+
+
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Email</mat-label>
+        <input type="text" matInput formControlName="email" [(ngModel)]="pTeamData.email">
+        <mat-error *ngIf="updateTeam.controls['email'].hasError('required')">
+          <title></title> Email is <strong>required</strong>
+        </mat-error>
+
+        <mat-error *ngIf="updateTeam.controls['email'].hasError('email')">
+          <title></title> Invalid <strong> Email Format example@example.com</strong>
+        </mat-error>
+      </mat-form-field>
+
+
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Phone Number</mat-label>
+        <input type="number" matInput formControlName="phonenumber" [(ngModel)]="pTeamData.phonenumber">
+        <mat-error *ngIf="updateTeam.controls['phonenumber'].hasError('required')">
+          <title></title> Phone Number is <strong>required</strong>
+        </mat-error>
+
+        <mat-error *ngIf="updateTeam.controls['phonenumber'].hasError('minlength')">
+          Phone Number is <strong>Less Than 10 number</strong>
+        </mat-error>
+
+        <mat-error *ngIf="updateTeam.controls['phonenumber'].hasError('maxlength')">
+          Phone Number is <strong>Grater Than 10 number</strong>
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Linkedin Url</mat-label>
+        <input type="text" matInput formControlName="linkedin" [(ngModel)]="pTeamData.linkedin">
+        <mat-error *ngIf="updateTeam.controls['linkedin'].hasError('required')">
+          <title></title> Linkedin Url is <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+
+
+
+      <div>
+        <input type="file" #file formControlName="imagename" (change)="uploadImage(file.files)"
+          [(ngModel)]="pTeamData.imagename">
+      </div>
+    </form>
+
+  </mat-dialog-content>
+  <mat-dialog-actions align="end">
+    <button mat-button mat-dialog-close class="btn btn-danger m-1">Cancel</button>
+    <button class="btn btn-success m-1" mat-button [mat-dialog-close]="true" cdkFocusInitial
+      (click)="updateteam()">update</button>
+  </mat-dialog-actions>
+</ng-template>

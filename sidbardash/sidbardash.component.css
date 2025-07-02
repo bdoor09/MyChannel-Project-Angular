@@ -1,0 +1,12 @@
+/* styles.css - External CSS file */
+.link-wrapper a:hover .icon-profile {
+    color: #ff5c5c; /* Change to your desired hover color */
+    font-size: 20px; 
+  }
+
+
+
+  /* <a (click)="ViewProfile()"  style="cursor: pointer;">
+  <span ></span>
+  <i class="mdi mdi-dots-horizontal icon-profile link-icon" style="width: 400px; height: 400px;"></i>
+</a> */

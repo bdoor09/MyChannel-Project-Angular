@@ -1,0 +1,79 @@
+p.grid-header{
+    border-left:none ;
+}
+
+.notification-button {
+    font-size: 24px;
+    color: #dcb654; /* Default color */
+    cursor: pointer;
+    border: none;
+    background: none;
+    transition: color 0.3s; /* Add transition for a smooth color change */
+  }
+
+  .notification-button:hover {
+    color: #e74c3c; /* Change the color on hover */
+  }
+
+
+  .delete-button {
+    font-size: 24px;
+    color: #9bd4de; /* Button color */
+    cursor: pointer;
+    border: none;
+    background: none;
+    transition: color 0.3s; /* Add transition for a smooth color change */
+  }
+
+  .delete-button:hover {
+    color: #e74c3c; /* Change the color on hover */
+  }
+
+
+.table td {
+    background-color: #f7f4ee;
+    border-bottom: 1px solid #ff5c5c;
+}
+
+.table td {
+    background-color: #fff ;
+    border-bottom: 1px solid #ff5c5c;
+}
+
+.table thead th {
+    vertical-align: bottom;
+    border-bottom: 2px solid #ff5c5c;
+}
+
+
+
+/* Style for the button */
+.custom-button {
+    display: inline-block;
+    padding: 10px; /* Button background color */
+    color:rgb(91, 14, 14); /* Button text color */
+ /* Border color initially */
+
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out, border-color 0.3s ease-in-out; /* Transition effect on hover */
+  }
+   
+  /* Style for the button on hover */
+  .custom-button:hover {
+    background-color: rgb(197, 38, 38); /* New background color on hover */
+    border-color: #0056b3; /* New border color on hover */
+  }
+
+
+  /* Add these styles to your CSS */
+.smaller-input {
+  font-size: 14px; /* Adjust the font size as needed */
+  height: 30px; /* Adjust the height as needed */
+  border: 1px solid silver;
+}
+
+.smaller-button {
+  font-size: 12px; /* Adjust the font size as needed */
+  height: 30px; /* Adjust the height as needed */
+  padding: 6px;
+}

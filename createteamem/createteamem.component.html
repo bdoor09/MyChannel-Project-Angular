@@ -1,0 +1,71 @@
+<h4 mat-dialog-title style="color:  #ff5c5c;">Create Team Member Content </h4>
+<mat-dialog-content class="mat-typography">
+    <form class="example-form" [formGroup]="createTeam">
+        <mat-form-field class="example-full-width">
+            <mat-label>Member Name</mat-label>
+            <input type="text" matInput formControlName="membername">
+            <mat-error *ngIf="createTeam.controls['membername'].hasError('required')">
+                <title></title> Member Name is <strong>required</strong>
+            </mat-error>
+        </mat-form-field>
+
+
+        <mat-form-field class="example-full-width">
+            <mat-label>Role</mat-label>
+            <input type="text" matInput formControlName="role">
+            <mat-error *ngIf="createTeam.controls['role'].hasError('required')">
+                <title></title> Role is <strong>required</strong>
+            </mat-error>
+        </mat-form-field>
+
+
+
+
+        <mat-form-field class="example-full-width">
+            <mat-label>Email</mat-label>
+            <input type="text" matInput formControlName="email">
+            <mat-error *ngIf="createTeam.controls['email'].hasError('required')">
+                <title></title> Email is <strong>required</strong>
+            </mat-error>
+
+            <mat-error *ngIf="createTeam.controls['email'].hasError('email')">
+                <title></title> Invalid <strong> Email Format example@example.com</strong>
+            </mat-error>
+        </mat-form-field>
+
+
+
+        <mat-form-field class="example-full-width">
+            <mat-label>Phone Number</mat-label>
+            <input type="number" matInput formControlName="phonenumber">
+            <mat-error *ngIf="createTeam.controls['phonenumber'].hasError('required')">
+                <title></title> Phone Number is <strong>required</strong>
+            </mat-error>
+
+
+            <mat-error *ngIf="createTeam.controls['phonenumber'].hasError('minlength')">
+                Phone Number is <strong>Less Than 10 number</strong>
+            </mat-error>
+
+            <mat-error *ngIf="createTeam.controls['phonenumber'].hasError('maxlength')">
+                Phone Number is <strong>Grater Than 10 number</strong>
+            </mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width">
+            <mat-label>Linkedin Url</mat-label>
+            <input type="text" matInput formControlName="linkedin">
+            <mat-error *ngIf="createTeam.controls['linkedin'].hasError('required')">
+                <title></title> Linkedin Url is <strong>required</strong>
+            </mat-error>
+        </mat-form-field>
+
+        <input type="file" #filee formControlName="imagename" (change)="uploadImage(filee.files)">
+    </form>
+
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+    <button mat-button mat-dialog-close class="btn btn-danger m-1">Cancel</button>
+    <button mat-button [mat-dialog-close]="true" (click)="save() " cdkFocusInitial
+        class="btn btn-success m-1">Save</button>
+</mat-dialog-actions>
