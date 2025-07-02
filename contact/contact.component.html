@@ -1,0 +1,76 @@
+<app-navbar></app-navbar>
+
+<!-- Content Start -->
+<div class="main-content no-sidebar">
+    <div class="main-content-inner">
+
+      <!-- Login Form Start -->
+      <div class="section-padding">
+
+        <div class="auth-wrapper">
+
+          <div class="auth-description " >
+            <div class="auth-description-inner"> 
+              <h1 style="color: white;" class="m-2">Contact </h1>
+          
+              <h2>
+                <span style="color: white; font-size: 20px;">
+                  <i class="fas fa-phone"></i>
+                  <a target="_blank" href="https://wa.me/966504312376" style="color: inherit; text-decoration: none;"> +966504312376</a>
+                </span>
+              </h2>
+            
+              <h2><span style="color: white; font-size: 20px;" class="fas fa-envelope"> <a href="mailto:m.channel.4444@gmail.com" style="color: inherit; text-decoration: none;"> m.channel.4444@gmail.com</a></span></h2>
+              <!-- <a href="login.html" class="btn-custom">Sign In</a> -->
+            </div>
+          </div>
+          <div class="auth-form">
+
+            <h2 class="custom-primary" style="font-size: 22px;">Feel Free To Contact Us!</h2>
+
+            <form>
+
+              <div class="form-group">
+                <input type="text" class="form-control form-control-light" style="font-size: 16px;" placeholder="Your Name" id="name" [formControl]="name">
+                <span style="color: red;" *ngIf="name.hasError('required')"> Name is required</span>
+
+              </div>
+              <div class="form-group">
+                <input type="email" class="form-control form-control-light" style="font-size: 16px;" placeholder="Subject" id="subject" [formControl]="subject">
+                <span style="color: red;" *ngIf="subject.hasError('required')"> Subject is required</span>
+
+              </div>
+
+              <div class="form-group">
+                <textarea placeholder="Content" class="form-control form-control-light" style="font-size: 16px;" id="content" [formControl]="content" ></textarea>
+                <span style="color: red;" *ngIf="content.hasError('required')"> Content is required</span>
+              </div>
+              <div class="form-group">
+                <input type="email" class="form-control form-control-light" style="font-size: 17px;" style="font-size: 16px;" placeholder="email@email.com" id="email" [formControl]="email">
+                <span style="color: red;" *ngIf="email.hasError('required')"> Email is required</span>
+                <span style="color: red;" *ngIf="email.hasError('email')"> Invalid format email example@example.com</span>
+              </div>
+  
+              <button type="submit"  (click)="NewContact()" [disabled]="!name.valid||!subject.valid||!content.valid||!email.valid" style="font-size: 15px;"  class="btn-custom primary">Send</button>
+<!-- 
+              <div class="auth-seperator">
+                <span>OR</span>
+              </div>
+
+              <div class="">
+                <button type="button" class="vl-social-login facebook"><i class="fab fa-facebook-f"></i> Continue with Facebook </button>
+                <button type="button" class="vl-social-login google"><i class="fab fa-google"></i> Continue with Google</button>
+              </div> -->
+
+            </form>
+          </div>
+
+        </div>
+
+      </div>
+      <!-- Login Form End -->
+
+    </div>
+  </div>
+  <!-- Content End -->
+<app-footer></app-footer>

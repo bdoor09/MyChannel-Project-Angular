@@ -1,0 +1,76 @@
+div.section.border-0 {
+    margin-top: -50px;
+  }
+
+  div.section-padding.pb-0.intro-video.text-center{
+    margin-top: -150px ;
+  }
+
+  a.play-btn {
+    display: flex !important; /* Use !important to override existing styles */
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    border-radius: 8px;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: #fff;
+    transition: 0.3s;
+  }
+
+  .help-card {
+    transition: transform 0.3s ease-in-out  !important;
+}
+ 
+.help-card:hover {
+    transform: scale(1.05)  !important;
+    box-shadow: 0 0 10px #ff5c5c;
+}
+.social-media {
+  display: flex;
+  justify-content: center;
+}
+
+
+
+
+
+
+.category-item .category-info {
+  background-color: #fff;
+  padding: 1px;
+  text-align: center;
+  border-radius: 0 0 8px 8px;
+  border-bottom: 2px solid  #ff5c5c;
+}
+
+.card-body {
+  padding: 30px;
+  border-radius: 8px 8px 0 0;
+  border-top: 2px solid #ff5c5c;
+}
+
+
+.channel-card .channel-thumb i {
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #fff;
+  margin: 0;
+  width: 20px;
+  height: 20px;
+  background-color: #ff5c5c;
+  border-radius: 50%;
+  border: 1px solid #fff;
+  font-size: 9px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.team-size{
+  width: 500px;
+  height: auto;
+  object-fit: contain;
+}

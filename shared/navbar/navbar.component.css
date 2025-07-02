@@ -1,0 +1,16 @@
+.scrollable-dropdown {
+    max-height: 300px; /* Set the maximum height as per your design */
+    overflow-y: auto;
+  }
+  
+  .dropdown-scroll {
+    padding-right: 10px; /* Adjust padding to accommodate scrollbar if necessary */
+  }
+
+
+
+  .navbar-controls > ul .dropdown-menu {
+    margin-top: 10px;
+    width: 200px;
+}
+  

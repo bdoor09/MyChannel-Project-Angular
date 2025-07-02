@@ -1,0 +1,115 @@
+<app-navbar></app-navbar>
+<div class="container">
+  <div class="row">
+    <div class="col-md-3">
+      <app-sidbar></app-sidbar>
+    </div>
+    <div class="col-md-9">
+
+
+    </div>
+  </div>
+
+
+  <div class="channle-search">
+    <div class="navbar-search">
+      <!-- <form method="post"> -->
+      <div class="input-group">
+        <input type="text" class="form-control" [(ngModel)]="_chaneelfilttertext"
+          placeholder="Search for videos, channels..." value="">
+        <div class="input-group-append">
+          <button type="submit" class="btn-custom smaller-button"> <i class="fas fa-search m-0 "></i> </button>
+        </div>
+      </div>
+      <!-- </form> -->
+    </div>
+  </div>
+
+  <div class="main-wrapper">
+    <!-- Content Start -->
+    <div class="main-content">
+      <div class="main-content-inner">
+        <!-- Categories Start -->
+        <div class="row">
+          <!-- Category Item Start -->
+          <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6"
+            *ngFor="let x of listofchannel | chaneelfilter:_chaneelfilttertext">
+            <div class="category-item card">
+              <div class="category-thumb" [routerLink]="['/user/singlechannel', x.id]">
+                <img style="cursor: pointer;" src="../../assets/channelImage/{{x.imagename}}" alt="category">
+              </div>
+              <div  class="category-info" >
+                <h4><a style="color: #ff5c5c;" [routerLink]="['/user/singlechannel', x.id]">{{x.channelname}} </a></h4>
+                <h6>{{x.description}}</h6>
+                <a class="dropdown-item" *ngIf="islogin; else loginMessage" style="cursor: pointer; background-color: #ff5c5c; border-radius: 8px;"
+                  (click)="createReport(x.id)">
+                  <i class="far fa-flag"></i>Report
+                </a>
+              </div>
+            </div>
+          </div>
+          <!-- Category Item End -->
+        </div>
+        <!-- Categories End -->
+        <app-footer></app-footer>
+      </div>
+    </div>
+    <!-- Content End -->
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+  <ng-template #callReportChannelDialog>
+    <h2 mat-dialog-title style="color: #ff5c5c;">Report Channel</h2>
+    <mat-dialog-content class="mat-typography">
+      <form class="example-form" [formGroup]="ReportChannel" style="width: 300px; height: 200px;">
+
+        <mat-form-field class="example-full-width" style="width: calc(100% - 16px); margin: 8px;">
+          <mat-label>Content</mat-label>
+          <textarea matInput formControlName="content" rows="5" style="width: 100%; margin: 0;"></textarea>
+        </mat-form-field>
+
+
+      </form>
+    </mat-dialog-content>
+    <mat-dialog-actions align="end">
+      <button mat-button mat-dialog-close class="btn btn-danger m-1">Cancel</button>
+      <button class="btn btn-success m-1" mat-button [mat-dialog-close]="true" cdkFocusInitial
+        (click)="RepChannel()">Report</button>
+    </mat-dialog-actions>
+  </ng-template>
+
+
+
+
+  <app-navbar></app-navbar>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-3">
+        <app-sidbar></app-sidbar>
+      </div>
+      <div class="col-md-9">
+
+
+      </div>
+    </div>
+
+
+
+
+    <ng-template #loginMessage>
+      <p style="font-size: 10px;">
+        <a class="auth-link" routerLink="/auth/login"><strong>Login</strong></a>
+        or
+        <a class="auth-link" routerLink="/auth/register"><strong>Sinup</strong></a>
+        to Report Channel
+      </p>
+    </ng-template>

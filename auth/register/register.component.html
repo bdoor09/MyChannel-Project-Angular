@@ -1,0 +1,144 @@
+<div class="main-wrapper">
+  <app-navbar></app-navbar>
+  <!-- Content Start -->
+  <div class="main-content no-sidebar">
+    <div class="main-content-inner">
+
+      <!-- Register Form Start -->
+      <div class="section-padding">
+
+        <div class="auth-wrapper">
+
+          <div class="auth-description">
+            <div class="auth-description-inner">
+              <h2>Welcome!</h2>
+              <p>Quick and easy – become a member of MyChannel now. Start sharing, watching, and connecting in just a
+                few clicks.</p>
+              <a routerLink="/auth/login" class="btn-custom">Sign In</a>
+            </div>
+
+
+          </div>
+          <div class="auth-form">
+
+            <h2 class="custom-primary">Create A New Account</h2>
+
+            <form method="post">
+
+              <div class="form-group">
+                <input type="text" class="form-control form-control-light" placeholder="First Name" id="firstname"
+                  [formControl]="firstname">
+                <span style="color: red;" *ngIf="firstname.hasError('required')"> First Name is required</span>
+
+              </div>
+
+              <div class="form-group">
+                <input type="text" class="form-control form-control-light" placeholder="Last Name" id="lastname"
+                  [formControl]="lastname">
+                <span style="color: red;" *ngIf="lastname.hasError('required')"> Last Name is required</span>
+              </div>
+
+              <div class="form-group">
+                <input type="number" class="form-control form-control-light" placeholder="Age" id="age"
+                  [formControl]="age">
+                <span style="color: red;" *ngIf="age.hasError('required')"> Age is required</span>
+
+              </div>
+
+              <div class="form-group">
+                <input type="email" class="form-control form-control-light" placeholder="Email Address" id="email"
+                  [formControl]="emaile">
+                <span style="color: red;" *ngIf="emaile.hasError('required')"> Email is required</span>
+                <span style="color: red;" *ngIf="emaile.hasError('email')"> Invalid format email
+                  example@example.com</span>
+              </div>
+
+
+              <div class="form-group">
+                <input type="text" class="form-control form-control-light" placeholder="City" id="city"
+                  [formControl]="city">
+                <span style="color: red;" *ngIf="city.hasError('required')"> City is required</span>
+              </div>
+
+              <div class="form-group">
+                <input type="text" class="form-control form-control-light" placeholder="Country" id="country"
+                  [formControl]="country">
+                <span style="color: red;" *ngIf="country.hasError('required')"> Country is required</span>
+              </div>
+
+              <div class="form-group">
+                <input type="date" class="form-control form-control-light" placeholder="Date of Birth" id="dateOfBirth"
+                  [formControl]="dateOfBirth">
+                <span style="color: red;" *ngIf="dateOfBirth.hasError('required')"> date of Birth is required</span>
+                <div class="placeholder">Date of Birth</div>
+              </div>
+
+
+
+              <div class="form-group">
+                <input type="text" class="form-control form-control-light" placeholder="Phonenumber" id="phonenumber"
+                  [formControl]="phonenumber">
+                <span style="color: red;" *ngIf="phonenumber.hasError('required')"> Phonenumber is required</span>
+                <span style="color: red;" *ngIf="phonenumber.hasError('minlength')"> Phone Number is Less Than 10
+                  number</span>
+                <span style="color: red;" *ngIf="phonenumber.hasError('maxlength')"> Phone Number is Grater Than 10
+                  number</span>
+
+              </div>
+
+
+
+              <div class="form-group">
+                <input type="text" class="form-control form-control-light" placeholder="username" id="userName"
+                  [formControl]="userName">
+                <span style="color: red;" *ngIf="userName.hasError('required')"> Username is required</span>
+
+              </div>
+
+
+              <div class="form-group">
+                <input type="password" class="form-control form-control-light" placeholder="Password" id="password"
+                  [formControl]="password">
+                <span style="color: red;" *ngIf="password.hasError('required')"> password is required</span>
+                <span style="color: red;" *ngIf="password.hasError('minlength')"> Please enter a strong password</span>
+                <span style="color: red;" *ngIf="password.hasError('misMatch')"> Confirm password should match
+                  password</span>
+              </div>
+
+              <div class="form-group">
+                <input type="password" class="form-control form-control-light" placeholder="Repeat your password"
+                  id="confirmpassword" [formControl]="confirmpassword" (change)="MatcError()">
+                <span style="color: red;" *ngIf="confirmpassword.hasError('required')"> confirmpassword is
+                  required</span>
+                <span style="color: red;" *ngIf="confirmpassword.hasError('misMatch')"> Confirm password should match
+                  password</span>
+
+              </div>
+
+              <div>
+
+                <input type="file" #file
+                  value="../../../assets/userImage/2a7d5618-6a57-4990-8ac5-75c92e609d3c_english.png" id="image"
+                  [formControl]="image" (change)="uploadImage(file.files)">
+
+              </div>
+
+              <button type="submit" (click)="NewUserRegister()"
+                [disabled]="!firstname.valid || !lastname.valid|| !age.valid || !emaile.valid ||!city.valid|| !country.valid||!dateOfBirth.valid||!phonenumber.valid||!image.valid||!userName.valid||!password.valid||!confirmpassword"
+                class="btn-custom primary">Register</button>
+
+
+
+            </form>
+          </div>
+
+        </div>
+
+      </div>
+      <!-- Register Form End -->
+
+    </div>
+  </div>
+  <app-footer></app-footer>
+</div>
+<!-- Content End -->

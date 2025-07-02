@@ -1,0 +1,37 @@
+ 
+   <!-- #1 -->
+ 
+   <h2 mat-dialog-title style="color: #ff5c5c;">Create Channel</h2>
+   <mat-dialog-content class="mat-typography">
+     <form class="example-form">
+       <mat-form-field class="example-full-width">
+         <mat-label>Channel Name</mat-label>
+         <input type="text" matInput [formControl]="channelName">
+         <mat-error *ngIf="!channelName.valid && channelName.touched">
+           Channel Name is <strong>required</strong>
+         </mat-error>
+       </mat-form-field>
+   
+       <mat-form-field class="example-full-width">
+         <mat-label>Description</mat-label>
+         <input type="text" matInput [formControl]="description">
+         <mat-error *ngIf="!description.valid && description.touched">
+           Description is <strong>required</strong>
+         </mat-error>
+       </mat-form-field>
+
+       <label for="avatarimage">Avatar Image</label>
+       <input id="avatarimage" style="margin-bottom: 10px; padding: 10px; margin-bottom: 10px;"  type="file" #imageFile (change)="uploadImage(imageFile.files)">
+   
+       <label for="backimage">Back Image</label>
+       <input id="backimage" style="margin-bottom: 10px;margin-left: 10px; padding: 10px; margin-bottom: 10px;"  type="file" #backImageFile  (change)="uploadImage2(backImageFile.files)">
+
+     </form>
+   </mat-dialog-content>
+   <mat-dialog-actions align="end">
+     <button mat-button mat-dialog-close class="btn btn-danger m-1">Cancel</button>
+     <button mat-button mat-dialog-close (click)="save()" class="btn btn-success m-1">Save</button>
+   </mat-dialog-actions>
+
+
+

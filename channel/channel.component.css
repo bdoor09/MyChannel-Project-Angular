@@ -1,0 +1,89 @@
+div.channle-search{
+    margin-right: 100px !important ;
+    margin-left: 700px !important;
+    margin-top: 150px !important ;
+}
+ 
+.smaller-button {
+    font-size: 12px; /* Adjust the font size as needed */
+    height: 30px; /* Adjust the height as needed */
+    padding: 6px;
+  }
+
+  .x:hover{
+    cursor: pointer;
+  }
+
+
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.7;
+    color: #212529;
+    text-align: left;
+    background-color: #7a3d3d !important;
+}
+
+
+
+
+.example-form {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+  }
+  
+  .example-full-width {
+    width: 100%;
+  }
+
+
+
+
+
+  div.channle-search{
+    margin-right: 100px !important ;
+    margin-left: 700px !important;
+    margin-top: 150px !important ;
+  }
+   
+   /* Add these styles to your CSS */
+.smaller-input {
+  font-size: 15px; /* Adjust the font size as needed */
+  height: 40px; /* Adjust the height as needed */
+  border: 1px solid silver;
+}
+
+.smaller-button {
+  font-size: 12px; /* Adjust the font size as needed */
+  height: 30px; /* Adjust the height as needed */
+  padding: 6px;
+}
+   
+   
+  /* Add this style to your CSS file or style section */
+  .category-item.card {
+    border: 1px solid #ccc; /* Set your desired border properties */
+    border-radius: 8px; /* Optional: Add border-radius for rounded corners */
+    overflow: hidden; /* Optional: Hide overflow to prevent content overflow */
+    transition: box-shadow 0.3s ease; /* Optional: Add transition for a smooth effect */
+  }
+   
+  .category-item.card:hover {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Optional: Add box-shadow on hover */
+  }
+
+  .auth-link {
+    text-decoration: none;
+    color: #007bff; /* Set the color to the desired link color */
+    transition: color 0.3s ease; /* Add a smooth transition for color changes */
+  }
+  
+  .auth-link:hover {
+    color: #ff5c5c; /* Set the color to the desired hover color */
+  }
+
+
+  

@@ -1,0 +1,28 @@
+.form-group {
+    position: relative;
+  }
+  
+  .form-control-light {
+    width: 100%;
+    padding: 8px;
+
+    font-size: 14px;
+  }
+  
+  .placeholder {
+    position: absolute;
+    top: -4px; /* Adjust the vertical position */
+    left: 8px; /* Adjust the horizontal position */
+    font-size: 14px;
+    color: #999; /* Placeholder color */
+    pointer-events: none; /* Make the placeholder not clickable */
+    transition: top 0.3s, left 0.3s, font-size 0.3s;
+  }
+  
+  .form-control-light:focus + .placeholder,
+  .form-control-light:not(:placeholder-shown) + .placeholder {
+    top: -8px; /* Adjust the vertical position when focused or input is not empty */
+    left: 4px; /* Adjust the horizontal position when focused or input is not empty */
+    font-size: 12px; /* Adjust the font size when focused or input is not empty */
+    color: #555; /* Adjust the color when focused or input is not empty */
+  }

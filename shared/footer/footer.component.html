@@ -1,0 +1,46 @@
+<!-- Footer Start -->
+<footer class="footer">
+  <div class="footer-top">
+    <div class="row">
+      <div class="col-md-9">
+
+        <form *ngIf="islogin; else loginMessage">
+          <div class="form-group">
+            <p style="font-size: 18px;">Share us Your Feedback</p>
+            <textarea placeholder="Your Feedback" id="content" class="form-control form-control-light"
+              [formControl]="content"></textarea>
+          </div>
+          <button type="submit" (click)="NewFeedback()" [disabled]="!content.valid "
+            class="btn-custom primary">Send</button>
+        </form>
+
+
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="row">
+      <div class="col-md-6">
+        <p class="copyright">Made with <i class="fas fa-heart"></i> by MyChannel Team</p>
+      </div>
+      <div class="col-md-6">
+        <ul class="social-media">
+          <li> <a href="#"> <i class="fab fa-facebook-f"></i> </a> </li>
+          <li> <a href="#"> <i class="fab fa-twitter"></i> </a> </li>
+          <li> <a href="#"> <i class="fab fa-linkedin-in"></i> </a> </li>
+          <li> <a href="#"> <i class="fab fa-pinterest-p"></i> </a> </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
+<!-- Footer End -->
+
+<ng-template #loginMessage>
+  <p>Please
+    <a class="auth-link" routerLink="/auth/login"><strong>Login</strong></a>
+    or
+    <a class="auth-link" routerLink="/auth/register"><strong>Sinup</strong></a>
+    to share your feedback
+  </p>
+</ng-template>

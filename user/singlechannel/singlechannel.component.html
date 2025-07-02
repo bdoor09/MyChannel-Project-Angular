@@ -1,0 +1,68 @@
+<div class="main-wrapper">
+  <!-- Nav Start -->
+  <app-navbar></app-navbar>
+  <!-- Nav End -->
+
+
+  <!-- Sidebar Start -->
+  <app-sidbar></app-sidbar>
+  <!-- Sidebar End -->
+
+  <!-- Content Start -->
+  <div class="main-content">
+
+
+    <div class="page-subheader">
+      <div class="page-subheader-inner"
+        style="background-image: url('../../../assets/ChannelBackImge/{{channelgetid.backimage}}');object-fit: cover;">
+      </div>
+      <div class="page-subheader-controls">
+        <div class="page-subheader-controls-inner">
+          <div class="channel-thumbnail">
+            <img class="imguser" src="../../../assets/channelImage/{{channelgetid.imagename}}" alt="channel">
+          </div>
+
+          <div class="page-subheader-left page-subheader-nav">
+            <ul>
+              <li> <a class="active" routerLink="/user/mychannel">Home</a> </li>
+              <li> <a [routerLink]="['/user/userviedo',channelgetid.id]">Videos</a> </li>
+              <li> <a [routerLink]="['/user/mysub',channelgetid.id]">Subscribtion</a></li>
+            </ul>
+          </div>
+
+          <div class="page-subheader-right">
+            <a (click)="sub()" class="btn-custom secondary"> <i class="fas fa-upload"></i> {{btnSubscribe}}</a>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    <!-- Inner Banner End -->
+
+    <div class="main-content-inner">
+
+      <div class="section about-channel-wrapper">
+        <div class="about-channel">
+          <div class="about-channel-inner">
+            <h2>{{channelgetid.channelname}}</h2>
+            <p>
+              {{channelgetid.description}}
+            </p>
+
+          </div>
+
+
+        </div>
+      </div>
+
+      <!-- Footer Start -->
+      <app-footer></app-footer>
+      <!-- Footer End -->
+
+    </div>
+
+  </div>
+  <!-- Content End -->
+
+</div>
+<!-- Main Wrapper End -->

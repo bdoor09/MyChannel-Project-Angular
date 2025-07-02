@@ -1,0 +1,290 @@
+<!-- Main Wrapper Start -->
+<div class="main-wrapper">
+  <!-- Nav Start -->
+  <app-navbar></app-navbar>
+  <!-- Nav End -->
+
+  <!-- Sidebar Start -->
+  <app-sidbar></app-sidbar>
+  <!-- Sidebar End -->
+
+
+  <div class="main-content">
+
+    <!-- Inner Banner Start -->
+    <div class="page-subheader">
+      <div class="page-subheader-inner"
+        style="background-image: url('../../../assets/userImage/{{userdetailes.image}}')"></div>
+      <div class="page-subheader-controls">
+        <div class="page-subheader-controls-inner">
+          <div class="channel-thumbnail">
+            <img class="imgchannel" src="../../../assets/userImage/{{userdetailes.image}}" alt="channel">
+          </div>
+          <div class="page-subheader-left page-subheader-nav">
+            <ul>
+              <li> <a class="active" routerLink="/user/myaccount">Profile</a></li>
+              <li> <a routerLink="/user/userchannel">My Channels</a></li>
+              <li> <a routerLink="/user/userInvoice">Invoice</a></li>
+              <li> <a routerLink="/user/videomanage">My Videos</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+    <div class="main-content-inner">
+
+      <div class="section section-mobile border-0">
+
+        <div class="row">
+
+          <!-- Account Information Start -->
+          <div class="col-lg-4">
+            <div class="page-options">
+              <h3>Account Management</h3>
+              <p>
+                Welcome to My channel ! and I'm thrilled to have you here , you can see and update your information
+                easily .
+              </p>
+            </div>
+          </div>
+          <!-- Account Information End -->
+
+          <!-- Account Information Edit Start -->
+          <div class="col-lg-8">
+
+            <div class="card">
+              <div class="card-body">
+
+                <div class="section-title-wrap">
+                  <h4>Your Information</h4>
+                </div>
+
+                <div class="btn-file-upload-wrapper">
+                  <div class="user-img-upload">
+                    <input id="fileInput" [formControl]="image" type="file" class="upload-input"
+                      (change)="handleFileSelection($event)">
+                    <img class="img-preview" src="../../../assets/userImage/{{userdetailes.image}}" alt="user">
+                  </div>
+                </div>
+                <div>
+                  <table class="table">
+                    <thead>
+                      <tr>
+                        <th style="font-size: 14px;"></th>
+                        <th style="font-size: 14px;"></th>
+
+                      </tr>
+
+                    <tbody>
+
+                      <tr>
+                        <td style="font-size: 17.5px;">FirstName</td>
+                        <td style="font-size: 16px;">{{userdetailes.firstName}}</td>
+                      </tr>
+
+                      <tr>
+                        <td style="font-size: 17.5px;">LastName</td>
+                        <td style="font-size: 16px;">{{userdetailes.lastName}}</td>
+                      </tr>
+
+                      <tr>
+                        <td style="font-size:17.5px;">Age</td>
+                        <td style="font-size: 16px;">{{userdetailes.age}}</td>
+                      </tr>
+
+                      <tr>
+                        <td style="font-size: 17.5px;">Emile</td>
+                        <td style="font-size: 16px;">{{userdetailes.emaile}}</td>
+                      </tr>
+
+                      <tr>
+                        <td style="font-size: 17.5px;">city</td>
+                        <td style="font-size: 16px;">{{userdetailes.city}}</td>
+                      </tr>
+
+                      <tr>
+                        <td style="font-size: 17.5px;">Country</td>
+                        <td style="font-size: 16px;">{{userdetailes.country}}</td>
+                      </tr>
+
+                      <tr>
+                        <td style="font-size:17.5px;">Date Of Birth</td>
+                        <td style="font-size: 16px;">{{userdetailes.dateOfBirth|date:'shortDate'}}</td>
+                      </tr>
+
+                      <tr>
+                        <td style="font-size: 17.5px;">username</td>
+                        <td style="font-size: 16px;">{{userdetailes.username}}</td>
+                      </tr>
+
+                      <tr>
+                        <td style="font-size: 17.5px;">Phonenumber</td>
+                        <td style="font-size: 16px;">{{userdetailes.phonenumber}}</td>
+                      </tr>
+
+                      <tr>
+                        <td colspan="4">
+                          <div class="text-right">
+                            <button type="submit" (click)="openUpdateUserDailog(userdetailes)" class="btn-custom"
+                              name="button">Update</button>
+                          </div>
+                        </td>
+                      </tr>
+
+                    </tbody>
+                  </table>
+
+                </div>
+              </div>
+
+
+            </div>
+            <!-- Account Information Edit End -->
+
+
+
+
+
+
+          </div>
+
+        </div>
+        <!-- Footer Start -->
+        <app-footer></app-footer>
+        <!-- Footer End -->
+      </div>
+
+      <!-- Content End -->
+
+
+
+      <ng-template #calinViewProfiledialog>
+        <h2 mat-dialog-title style="color: #ff5c5c;">Ubdate Your Information</h2>
+        <mat-dialog-content class="mat-typography">
+          <form>
+            <div class="btn-file-upload-wrapper">
+              <div class="user-img-upload">
+                <label for="fileInput" class="btn-file-upload btn-custom secondary btn-icon">
+                  <i class="fas fa-pencil-alt m-0"></i>
+                </label>
+                <input id="fileInput" [formControl]="image" type="file" class="upload-input"
+                  (change)="handleFileSelection($event)" [(ngModel)]="pUData.image">
+                <!-- <img class="img-preview" [src]="imageSrc" alt="user">  -->
+                <img class="img-preview" src="../../../assets/userImage/{{userdetailes.image}}" alt="user">
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <label class="col-sm-3 col-form-label">First Nmae</label>
+              <div class="col-sm-9">
+                <input type="text" style="font-size: 16.5px;" class="form-control" [formControl]="firstName"
+                  id="firstName" [(ngModel)]="pUData.firstName">
+                <span style="color: red;" *ngIf="firstName.hasError('required')"> first Name is required</span>
+
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <label class="col-sm-3 col-form-label">Last Name</label>
+              <div class="col-sm-9">
+                <input type="text" style="font-size: 16.5px;" class="form-control" [formControl]="lastName"
+                  id="lastName" [(ngModel)]="pUData.lastName">
+                <span style="color: red;" *ngIf="lastName.hasError('required')"> Last Name is required</span>
+
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <label class="col-sm-3 col-form-label">Age</label>
+              <div class="col-sm-9">
+                <input type="number" style="font-size: 16.5px;" class="form-control" [formControl]="age" id="age"
+                  [(ngModel)]="pUData.age">
+                <span style="color: red;" *ngIf="age.hasError('required')"> age is required</span>
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <label class="col-sm-3 col-form-label">Email Address</label>
+              <div class="col-sm-9">
+                <input type="text" style="font-size: 16.5px;" class="form-control" [formControl]="email" id="email"
+                  [(ngModel)]="pUData.emaile">
+                <span style="color: red;" *ngIf="email.hasError('required')"> Email is required</span>
+                <span style="color: red;" *ngIf="email.hasError('email')"> Invalid format email
+                  example@example.com</span>
+              </div>
+            </div>
+
+
+            <div class="form-group row">
+              <label class="col-sm-3 col-form-label">City</label>
+              <div class="col-sm-9">
+                <input type="text" style="font-size: 16.5px;" class="form-control" [formControl]="city" id="city"
+                  [(ngModel)]="pUData.city">
+                <span style="color: red;" *ngIf="city.hasError('required')"> City is required</span>
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <label class="col-sm-3 col-form-label">Country</label>
+              <div class="col-sm-9">
+                <input type="text" style="font-size: 16.5px;" class="form-control" [formControl]="country" id="country"
+                  [(ngModel)]="pUData.country">
+                <span style="color: red;" *ngIf="country.hasError('required')"> Country is required</span>
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <label class="col-sm-3 col-form-label">dateOfBirth</label>
+              <div class="col-sm-9">
+                <input style="font-size: 16.5px;" type="date" class="form-control" [formControl]="dateOfBirth"
+                  id="dateOfBirth" [(ngModel)]="pUData.dateOfBirth">
+                <span style="color: red;" *ngIf="dateOfBirth.hasError('required')"> Date Of Birth is required</span>
+
+                <div class="placeholder">{{userdetailes.dateOfBirth|date:'shortDate'}}</div>
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <label class="col-sm-3 col-form-label">Username</label>
+              <div class="col-sm-9">
+                <input type="text" style="font-size: 16.5px;" class="form-control" [formControl]="username"
+                  id="username" [(ngModel)]="pUData.username">
+                <span style="color: red;" *ngIf="username.hasError('required')"> username is required</span>
+
+              </div>
+            </div>
+
+
+            <div class="form-group row">
+              <label class="col-sm-3 col-form-label">phonenumber</label>
+              <div class="col-sm-9">
+                <input type="number" style="font-size: 16.5px;" class="form-control" [formControl]="phonenumber"
+                  id="phonenumber" [(ngModel)]="pUData.phonenumber">
+                <span style="color: red;" *ngIf="phonenumber.hasError('required')"> Phonenumber is required</span>
+                <span style="color: red;" *ngIf="phonenumber.hasError('min')"> Phone Number is Less Than 10
+                  number</span>
+                <span style="color: red;" *ngIf="phonenumber.hasError('max')"> Phone Number is Grater Than 10
+                  number</span>
+              </div>
+            </div>
+
+          </form>
+        </mat-dialog-content>
+        <mat-dialog-actions align="end">
+          <button mat-button mat-dialog-close class="btn btn-danger m-1">Cancel</button>
+          <button class="btn btn-success m-1" (click)="UpdateUser()" mat-button [mat-dialog-close]="true"
+            cdkFocusInitial>Save Change</button>
+        </mat-dialog-actions>
+
+
+      </ng-template>

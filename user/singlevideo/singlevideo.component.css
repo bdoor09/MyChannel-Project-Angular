@@ -1,0 +1,29 @@
+.btn-custom.btn-icon {
+    margin: 3px !important;
+}
+
+h1.video-title {
+    margin-top: 6px !important;
+}
+
+
+
+.responses-container {
+    max-height: 150px;
+    /* Set your preferred maximum height */
+    overflow-y: auto;
+    /* Enable vertical scrolling */
+    margin-top: 10px;
+    /* Adjust as needed for spacing */
+}
+
+
+.auth-link {
+    text-decoration: none;
+    color: #007bff; /* Set the color to the desired link color */
+    transition: color 0.3s ease; /* Add a smooth transition for color changes */
+  }
+  
+  .auth-link:hover {
+    color: #ff5c5c; /* Set the color to the desired hover color */
+  }

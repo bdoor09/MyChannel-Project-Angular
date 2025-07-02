@@ -1,0 +1,206 @@
+<app-navbar></app-navbar>
+<app-sidbar></app-sidbar>
+<!-- Content Start -->
+<div class="main-content">
+  <div class="main-content-inner">
+
+    <div class="page-title">
+      <h1>Explore</h1>
+    </div>
+
+    <!-- Banner Start -->
+    <div class="banner banner-1 swiper-container">
+
+      <div class="banner-inner swiper-wrapper">
+        <!-- Banner Item Start -->
+        <div class="banner-item swiper-slide " *ngFor="let c of home.Home">
+          <div class="banner-thumbnail"
+            style="background-image:url(../../assets/HomeImages/);border: 1px solid #ff5c5c;">
+            <!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/yqckJtIShyM?si=4G-HwUoK6QUVBuYh" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> -->
+          </div>
+          <div class="banner-item-inner">
+            <div class="media">
+              <div class="media-body">
+                <h6> <a href="single-video.html">{{c.title}}</a> </h6>
+              </div>
+            </div>
+            <p>{{c.contents}}</p>
+          </div>
+        </div>
+        <!-- Banner Item End -->
+      </div>
+    </div>
+    <!-- Banner End -->
+
+    <!-- Trending Videos Start -->
+    <div class="section">
+
+      <div class="section-title-wrap">
+        <div class="section-title">
+          <h3>Features</h3>
+        </div>
+        <!-- <div class="section-controls">
+            <a href="#">See All</a>
+            <div class="arrows">
+              <div class="swiper-button-prev multi-row-arrow-prev"></div>
+              <div class="swiper-button-next multi-row-arrow-next"></div>
+            </div>
+          </div> -->
+      </div>
+      <!-- 
+        <div class="swiper-container multi-row-videos">
+          <div class="video-slider swiper-wrapper"> -->
+
+
+      <div class="main-content-inner">
+
+        <!-- Cards start -->
+        <div class="section border-0">
+          <div class="row">
+            <div class="col-xl-4 col-lg-6 col-md-6 " *ngFor="let f of home.Featur">
+              <div class="card help-card">
+                <div class="card-body">
+                  <div class="media">
+                    <i><img class="flaticon-employee" src="../../assets/FeaturseImages/{{f.imagename}}" alt=""></i>
+                    <div class="media-body">
+                      <!-- <h4>{{For Users}}</h4> -->
+                      <h6>{{f.title}}</h6>
+                      <ul class="vl-list">
+                        <li>{{f.con1}}</li>
+                        <li>{{f.con2}}</li>
+                        <li>{{f.con3}}</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Cards End -->
+      </div>
+
+
+      <!-- Trending Videos End -->
+
+
+      <!-- About us section -->
+      <div class="section">
+        <div class="section-title-wrap">
+        </div>
+        <!-- Content Start -->
+        <div class="main-content no-sidebar">
+          <div class="main-content-inner">
+
+            <!-- Intro Video Start -->
+            <div class="section-padding pb-0 intro-video text-center" *ngFor="let a of home.About">
+
+              <div class="section-title-wrap-lg">
+                <h1 style="color: #ff5c5c;">{{a.title}}</h1>
+              </div>
+
+              <div class="row">
+                <div class="col-md-8 offset-md-2">
+                  <div class="embed-responsive embed-responsive-16by9">
+                    <video class=" embed-responsive-item m-2 p-2 image-style" controls onerror="videoError()">
+                      <source src="../../../assets/AboutVido/{{a.imagename}} " type="video/mp4">
+                    </video>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="section-padding" *ngFor="let a of home.About">
+              <div class="intro-video-description">
+                <p>{{a.contents}}</p>
+              </div>
+            </div>
+            <!-- Live Channels End -->
+
+            <!-- END About us section -->
+
+
+
+
+            <!-- FeedBacks Start -->
+            <div class="section">
+
+              <div class="section-title-wrap">
+                <div class="section-title mt-6">
+                  <h3>FeedBacks</h3>
+                </div>
+                <div class="section-controls">
+                  <a href="#" class="mr-0">See All</a>
+                </div>
+              </div>
+
+              <div class="row">
+                <!-- Channel Item Start -->
+                <div class="col-xl-3 col-sm-6" *ngFor="let feed of home.feedback">
+                  <div class="card channel-card">
+                    <div class="card-body">
+                      <div class="channel-thumb">
+                        <a href="single-channel.html"><img src="../../assets/userImage/{{feed.image}}"
+                            alt="channel"></a>
+                        <i class="fas fa-check-double"></i>
+                      </div>
+                      <div class="channel-meta">
+                        <h5> <a href="single-channel.html"></a> {{ feed.firstname + ' ' + feed.lastname }} </h5>
+                      </div>
+                      <div class="channel-info">
+                        <p>{{feed.content}}</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- FeedBacks End -->
+              </div>
+            </div>
+
+
+
+            <!-- Team members Start -->
+            <div class="section section-margin">
+
+              <div class="section-title-wrap">
+                <div class="section-title">
+                  <h3>Team members</h3>
+                </div>
+                <div class="section-controls">
+                  <a href="#">See All</a>
+                  <div class="arrows">
+                    <div class="swiper-button-prev single-row-arrow-prev"></div>
+                    <div class="swiper-button-next single-row-arrow-next"></div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="swiper-container single-row-slider">
+                <div class="categories-slider swiper-wrapper">
+                  <div class="swiper-slide" *ngFor="let t of home.Team">
+                    <a href="video-list.html" class="category-item">
+                      <div class="category-thumb">
+                        <img class="team-size" src="../../assets/TeamImage/{{t.imagename}}">
+                      </div>
+                      <div class="category-info">
+                        <h3>{{t.membername}}</h3>
+                        <p>{{t.role}}</p>
+                        <div class="">
+                          <ul class="social-media">
+                            <li> <a href="{{t.email}}"> <i class="fas fa-envelope"></i> </a> </li>
+                            <li> <a href="{{t.phonenumber}}"> <i class="fas fa-phone"></i> </a> </li>
+                            <li> <a href="{{t.linkedin}}"> <i class="fab fa-linkedin-in"></i> </a> </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <app-footer></app-footer>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

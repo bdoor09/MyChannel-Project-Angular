@@ -1,0 +1,119 @@
+<!-- Nav Start -->
+<div class="main-wrapper">
+  <div class="nav-wrapper">
+
+    <div class="navbar-logo">
+
+      <div class="aside-toggler toggle-aside">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+
+      <a routerLink="/" style="font-size: 19px;">
+        <span style="color: #515151;">My</span> <span style="color: #ff5c5c;">Channel</span>
+      </a>
+
+    </div>
+
+    <div class="navbar-menu">
+      <ul>
+        <li> <a routerLink="/" style="font-size: 16.5px;"> Home </a> </li>
+        <li> <a routerLink="/channel" style="font-size: 16.5px;"> Channel </a> </li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Pages
+          </a>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" href="my-channel.html">Channel</a>
+            <a class="dropdown-item" href="video-list.html">Video List</a>
+            <a class="dropdown-item" href="membership.html">Membership</a>
+            <a class="dropdown-item" routerLink="/re/login">Login</a>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div class="navbar-search">
+      <form method="post">
+        <div class="input-group">
+          <input type="text" class="form-control" placeholder="Search for videos, channels..." value="">
+          <div class="input-group-append">
+            <button type="submit" class="btn-custom"> <i class="fas fa-search m-0"></i> </button>
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <div class="navbar-controls">
+
+      <ul>
+        <li *ngIf="islogin" class="dropdown">
+          <a href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="far fa-bell"></i>
+          </a>
+          <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right scrollable-dropdown">
+            <h6 class="dropdown-header">Notifications</h6>
+            <div class="dropdown-scroll">
+              <ng-container *ngIf="notify.length > 0; else NoNotifications">
+                <a *ngFor="let n of notify" class="dropdown-item new-notification">
+                  <div class="media">
+                    <img class="img-sm" src="../../../assets/channelImage/{{n.imageName}}" alt="channel">
+                    <div class="media-body">
+                      <span class="fs-14"><b> Channel Name</b> {{n.channelName}} </span>
+                      <span class="fs-14"> Message {{n.message}} </span>
+                      <span class="fs-14"> Report Content {{n.content}} </span>
+                      <span>Date Of Send {{n.dtaeOfSend | date:'shortDate'}}</span>
+                    </div>
+                  </div>
+                </a>
+              </ng-container>
+              <ng-template #NoNotifications>
+                <a class="dropdown-item new-notification">
+                  <div class="media">
+                    <div class="media-body">
+                      <ng-container *ngIf="isnotifyed; else NotfiyeMessage">
+                        <span class="fs-14">No Notifications</span>
+                      </ng-container>
+                    </div>
+                  </div>
+                </a>
+              </ng-template>
+            </div>
+          </div>
+        </li>
+
+        <li class="dropdown">
+          <a href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="far fa-user"></i>
+          </a>
+          <div class="dropdown-menu dropdown-menu-right">
+            <div class="dropdown-header dropdown-header-lg">
+              <div class="media user-info" *ngIf="islogin">
+                <img src="../../../assets/userImage/{{userdetailes.image}}" alt="user">
+                <div class="media-body">
+                  {{ userdetailes.firstName + ' ' + userdetailes.lastName }}
+
+                </div>
+              </div>
+            </div>
+            <a class="dropdown-item" *ngIf="!islogin" routerLink="/auth/login"><i class="far fa-user"></i> Login
+              <span><i class="fas fa-chevron-right"></i></span> </a>
+            <a class="dropdown-item" *ngIf="!islogin" routerLink="/auth/register"><i class="far fa-user"></i> Register
+              <span><i class="fas fa-chevron-right"></i></span> </a>
+            <a class="dropdown-item" *ngIf="islogin" (click)="logout()" style="cursor: pointer;"><i
+                class="far fa-user"></i> Logout <span><i class="fas fa-chevron-right"></i></span> </a>
+            <a class="dropdown-item" *ngIf="islogin" routerLink="/user/myaccount"><i class="far fa-user"></i> Account
+              Management <span><i class="fas fa-chevron-right"></i></span> </a>
+            <div class="dropdown-divider">
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+  </div>
+</div>
+<!-- Nav End -->
+
+<ng-template #NotfiyeMessage>
+  <div class="media-body">
+    <p style="font-size: 15px;">No Notification</p>
+  </div>
+</ng-template>
