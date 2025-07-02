@@ -1,56 +1,82 @@
 {
-  "name": "my-channel",
-  "version": "0.0.0",
-  "scripts": {
-    "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build",
-    "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+  "_from": "@fortawesome/fontawesome-free",
+  "_id": "@fortawesome/fontawesome-free@5.2.0",
+  "_inBundle": false,
+  "_integrity": "sha512-4pgStJx9UmydKc7wwF6Xjw4dFqzUnQejeuP2aUNHWazayWbmMbrx5rieN9+oob4bUwkf1thS3am0Ko+uhFHpNA==",
+  "_location": "/@fortawesome/fontawesome-free",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "tag",
+    "registry": true,
+    "raw": "@fortawesome/fontawesome-free",
+    "name": "@fortawesome/fontawesome-free",
+    "escapedName": "@fortawesome%2ffontawesome-free",
+    "scope": "@fortawesome",
+    "rawSpec": "",
+    "saveSpec": null,
+    "fetchSpec": "latest"
   },
-  "private": true,
-  "dependencies": {
-    "@angular/animations": "^16.0.0",
-    "@angular/cdk": "^16.2.12",
-    "@angular/common": "^16.0.0",
-    "@angular/compiler": "^16.0.0",
-    "@angular/core": "^16.0.0",
-    "@angular/forms": "^16.0.0",
-    "@angular/material": "^16.2.12",
-    "@angular/platform-browser": "^16.0.0",
-    "@angular/platform-browser-dynamic": "^16.0.0",
-    "@angular/router": "^16.0.0",
-    "@swimlane/ngx-charts": "^20.5.0",
-    "bootstrap": "^5.3.2",
-    "chart.js": "^4.4.1",
-    "html2canvas": "^1.4.1",
-    "html2pdf.js": "^0.10.1",
-    "jquery": "^3.7.1",
-    "jspdf": "^2.5.1",
-    "jwt-decode": "^4.0.0",
-    "ng2-charts": "^5.0.4",
-    "ngx-spinner": "^16.0.2",
-    "ngx-toastr": "^18.0.0",
-    "pdfmake": "^0.2.8",
-    "rxjs": "~7.8.0",
-    "swiper": "^11.0.5",
-    "tslib": "^2.3.0",
-    "zone.js": "~0.13.0"
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/@fortawesome/fontawesome-free/-/fontawesome-free-5.2.0.tgz",
+  "_shasum": "50cd9856774351c56c0b1b0db4efe122d7913e58",
+  "_spec": "@fortawesome/fontawesome-free",
+  "_where": "/Users/linsa/project/melody/template",
+  "author": {
+    "name": "Dave Gandy",
+    "email": "dave@fontawesome.com",
+    "url": "http://twitter.com/davegandy"
   },
-  "devDependencies": {
-    "@angular-devkit/build-angular": "^16.0.6",
-    "@angular/cli": "~16.0.6",
-    "@angular/compiler-cli": "^16.0.0",
-    "@types/jasmine": "~4.3.0",
-    "@types/jquery": "^3.5.29",
-    "@types/jspdf": "^2.0.0",
-    "@types/pdfmake": "^0.2.8",
-    "jasmine-core": "~4.6.0",
-    "karma": "~6.4.0",
-    "karma-chrome-launcher": "~3.2.0",
-    "karma-coverage": "~2.2.0",
-    "karma-jasmine": "~5.1.0",
-    "karma-jasmine-html-reporter": "~2.0.0",
-    "typescript": "~5.0.2"
-  }
+  "bugs": {
+    "url": "http://github.com/FortAwesome/Font-Awesome/issues"
+  },
+  "bundleDependencies": false,
+  "contributors": [
+    {
+      "name": "Brian Talbot",
+      "url": "http://twitter.com/talbs"
+    },
+    {
+      "name": "Travis Chase",
+      "url": "http://twitter.com/supercodepoet"
+    },
+    {
+      "name": "Rob Madole",
+      "url": "http://twitter.com/robmadole"
+    },
+    {
+      "name": "Geremia Taglialatela",
+      "url": "http://twitter.com/gtagliala"
+    },
+    {
+      "name": "Mike Wilkerson",
+      "url": "http://twitter.com/mw77"
+    }
+  ],
+  "dependencies": {},
+  "deprecated": false,
+  "description": "The iconic font, CSS, and SVG framework",
+  "engines": {
+    "node": ">=6"
+  },
+  "homepage": "https://fontawesome.com",
+  "keywords": [
+    "font",
+    "awesome",
+    "fontawesome",
+    "icon",
+    "svg",
+    "bootstrap"
+  ],
+  "license": "(CC-BY-4.0 AND OFL-1.1 AND MIT)",
+  "main": "js/fontawesome.js",
+  "name": "@fortawesome/fontawesome-free",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FortAwesome/Font-Awesome.git"
+  },
+  "style": "css/fontawesome.css",
+  "version": "5.2.0"
 }

@@ -1,27 +1,38 @@
-# MyChannel
+# @fortawesome/fontawesome-free - The Official Font Awesome 5 NPM package
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.0.6.
+> "I came here to chew bubblegum and install Font Awesome 5 - and I'm all out of bubblegum"
 
-## Development server
+[![npm](https://img.shields.io/npm/v/@fortawesome/fontawesome-free.svg?style=flat-square)](https://www.npmjs.com/package/@fortawesome/fontawesome-free)
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Installation
 
-## Code scaffolding
+```
+$ npm i --save @fortawesome/fontawesome-free
+```
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Or
 
-## Build
+```
+$ yarn add @fortawesome/fontawesome-free
+```
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## What's included?
 
-## Running unit tests
+**This package includes all the same files available through our Free and Pro CDN.**
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+* /js - All JavaScript files associated with Font Awesome 5 SVG with JS
+* /css - All CSS using the classic Web Fonts with CSS implementation
+* /sprites - SVG icons packaged in a convenient sprite
+* /scss, /less - CSS Pre-processor files for Web Fonts with CSS
+* /webfonts - Accompanying files for Web Fonts with CSS
+* /svg - Individual icon files in SVG format
 
-## Running end-to-end tests
+## Documentation
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+Get started [here](https://fontawesome.com/get-started). Continue your journey [here](https://fontawesome.com/how-to-use).
 
-## Further help
+Or go straight to the [API documentation](https://fontawesome.com/how-to-use/font-awesome-api).
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## Issues and support
+
+Start with [GitHub issues](https://github.com/FortAwesome/Font-Awesome/issues) and ping us on [Twitter](https://twitter.com/fontawesome) if you need to.
